@@ -37,8 +37,8 @@ sequelize.sync().then(function() {
   Quiz.count().then(function (count){
     if(count === 0) {   // la tabla se inicializa solo si está vacía
       Quiz.bulkCreate(
-        [ {pregunta: 'Capital de Italia', respuesta: 'Roma'},
-          {pregunta: 'Color del caballo blanco de Santiago', respuesta: 'Blanco'}
+        [ {pregunta: 'Capital de Italia', respuesta: 'Roma', tema:"humanidades"},
+          {pregunta: 'Color del caballo blanco de Santiago', respuesta: 'Blanco', tema:"ocio"}
         ]
       ).then(function(){console.log('Base de datos inicializada')});
     };
